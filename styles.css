@@ -225,3 +225,18 @@
   .program-cta h2 { font-size: 42px; }
   .program-cta .quick-actions { margin-top: 20px; }
 }
+
+/* Prevent decorative emoji glyphs from appearing as oversized colored stickers
+   over the program links on tablets and phones. */
+@media (max-width: 900px) {
+  .service-card .card-ornament { display: none; }
+}
+
+/* Keep the program-card symbols in the site's text icon style on mobile browsers. */
+.service-icon,
+.card-ornament,
+.note-mark,
+.hero-sticker b {
+  font-variant-emoji: text;
+}
+
