@@ -242,37 +242,46 @@
 
 /* Responsive Facebook Page timeline */
 .facebook-feed {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 500px);
+  align-items: center;
+  gap: clamp(36px, 6vw, 80px);
   margin-top: 54px;
   padding-top: 40px;
   border-top: 1px solid var(--line);
 }
-.facebook-feed-head {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
-  margin-bottom: 14px;
+.facebook-feed-copy {
+  max-width: 380px;
+  align-self: center;
 }
-.facebook-feed .eyebrow { margin-bottom: 10px; }
+.facebook-feed .eyebrow { margin-bottom: 12px; }
 .facebook-feed h3 {
   margin: 0;
   color: var(--blue-deep);
-  font-size: clamp(30px, 3vw, 38px);
+  font-size: clamp(38px, 4.2vw, 52px);
+  line-height: 1.02;
 }
 .facebook-feed h3 em {
   color: var(--red);
   font-style: normal;
 }
 .facebook-feed-summary {
-  max-width: 500px;
-  margin: 0 auto 18px;
+  max-width: 360px;
+  margin: 20px 0 24px;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.75;
+}
+.facebook-feed-copy .text-link {
+  display: inline-flex;
+  align-items: center;
+}
+.facebook-feed-panel {
+  width: 100%;
+  max-width: 500px;
 }
 .facebook-plugin {
-  width: min(100%, 500px);
-  margin: 0 auto;
+  width: 100%;
   overflow: hidden;
   border: 1px solid #e4e8ef;
   border-radius: 12px;
@@ -286,11 +295,10 @@
   border: 0;
 }
 .facebook-feed-fallback {
-  max-width: 500px;
-  margin: 12px auto 0;
+  margin: 12px 0 0;
   color: #777;
   font-size: 11px;
-  text-align: center;
+  line-height: 1.6;
 }
 .facebook-feed-fallback a {
   color: var(--blue);
@@ -298,16 +306,29 @@
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+@media (max-width: 900px) {
+  .facebook-feed {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 26px;
+  }
+  .facebook-feed-copy {
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .facebook-feed-summary {
+    margin: 18px auto 20px;
+  }
+  .facebook-feed-panel {
+    justify-self: center;
+  }
+}
 @media (max-width: 640px) {
   .facebook-feed {
     margin-top: 38px;
     padding-top: 30px;
+    gap: 20px;
   }
-  .facebook-feed-head {
-    display: block;
-  }
-  .facebook-feed-head .text-link {
-    display: inline-block;
-    margin-top: 14px;
-  }
+  .facebook-feed h3 { font-size: 42px; }
 }
