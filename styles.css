@@ -240,3 +240,74 @@
   font-variant-emoji: text;
 }
 
+/* Responsive Facebook Page timeline */
+.facebook-feed {
+  margin-top: 54px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+.facebook-feed-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 14px;
+}
+.facebook-feed .eyebrow { margin-bottom: 10px; }
+.facebook-feed h3 {
+  margin: 0;
+  color: var(--blue-deep);
+  font-size: clamp(30px, 3vw, 38px);
+}
+.facebook-feed h3 em {
+  color: var(--red);
+  font-style: normal;
+}
+.facebook-feed-summary {
+  max-width: 500px;
+  margin: 0 auto 18px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.facebook-plugin {
+  width: min(100%, 500px);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #e4e8ef;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 30px #183b7012;
+}
+.facebook-plugin iframe {
+  display: block;
+  width: 100%;
+  height: 760px;
+  border: 0;
+}
+.facebook-feed-fallback {
+  max-width: 500px;
+  margin: 12px auto 0;
+  color: #777;
+  font-size: 11px;
+  text-align: center;
+}
+.facebook-feed-fallback a {
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+@media (max-width: 640px) {
+  .facebook-feed {
+    margin-top: 38px;
+    padding-top: 30px;
+  }
+  .facebook-feed-head {
+    display: block;
+  }
+  .facebook-feed-head .text-link {
+    display: inline-block;
+    margin-top: 14px;
+  }
+}
